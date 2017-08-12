@@ -157,5 +157,15 @@
   </div>
 </section>
 <section>
+  <a href="https://www.google.com/maps/place/{{country.latlng[0]}},{{country.latlng[1]}}/@{{country.latlng[0]}},{{country.latlng[1]}},6z"
+     target="_blank"
+     class="btn btn-lg btn-block btn-secondary">
+    Open Google Maps
+  </a>
+  <a href="https://{{language}}.wikipedia.org/wiki/{{country.name}}"
+     target="_blank"
+     class="btn btn-lg btn-block btn-secondary">
+    Open Wikipedia
+  </a>
   <a (click)="onBack()" class="btn btn-lg btn-block btn-primary">Back</a>
 </section>

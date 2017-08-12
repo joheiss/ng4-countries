@@ -5,8 +5,6 @@ import {CountriesService} from '../countries.service';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
 import {Location} from '@angular/common';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'jo-country-details',
@@ -15,6 +13,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 })
 export class CountryDetailsComponent implements OnInit {
 
+  language;
   country: Country;
   translations: { language: string, name: string }[];
 
@@ -30,6 +29,7 @@ export class CountryDetailsComponent implements OnInit {
         this.country = this.service.getCountryByCode(params.get('id'));
         this.translations = this.mapTranslationsToArray(this.country.translations);
       });
+    this.language = 'en'; // navigator.language;
   }
 
   onBack() {
