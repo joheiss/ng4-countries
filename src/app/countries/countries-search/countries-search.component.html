@@ -1,0 +1,42 @@
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
+  <input type="text"
+         (input)="onInput($event.target.value)"
+         value="{{searchCriteria.term}}"
+         class="form-control"
+         placeholder="Search"
+         aria-describedby="basic-addon1">
+</div>
+{{ searchCriteria | json}}
+
+<div class="btn-group jo-flx-row">
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.africa"
+         (click)="onToggle(africa)">
+    <input type="checkbox" [checked]="searchCriteria.africa" id="africa" #africa> Africa
+  </label>
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.antarctica"
+         (click)="onToggle(antarctica)">
+    <input type="checkbox" [checked]="searchCriteria.antarctica" id="antarctica" #antarctica> Antarctica
+  </label>
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.asia"
+         (click)="onToggle(asia)">
+    <input type="checkbox" [checked]="searchCriteria.asia" id="asia" #asia> Asia
+  </label>
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.australia"
+         (click)="onToggle(australia)">
+    <input type="checkbox" [checked]="searchCriteria.australia" id="australia" #australia> Australia
+  </label>
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.america"
+         (click)="onToggle(america)">
+    <input type="checkbox" [checked]="searchCriteria.america" id="america" #america> America
+  </label>
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.europe"
+         (click)="onToggle(europe)">
+    <input type="checkbox" [checked]="searchCriteria.europe" id="europe" #europe> Europe
+  </label>
+  <label class="btn btn-secondary" [class.active]="!searchCriteria.none"
+         (click)="onToggle(none)">
+    <input type="checkbox" [checked]="searchCriteria.none" id="none" #none> None
+  </label>
+</div>
+

@@ -1,0 +1,23 @@
+.jo-zippy {
+    /* border: 1px solid #ccc; */
+    width: 100%;
+}
+
+.jo-zippy-heading {
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.jo-zippy-body {
+    /* padding: 10px; */
+    background-color: white;
+}
+
+.expanded {
+    background-color: #f0f0f0;
+}
+
+.fa {
+     float: right;
+}

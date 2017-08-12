@@ -1,0 +1,145 @@
+$padding-width: 30px;
+$border-width: 1px;
+$block-width: 320px;
+$break-xs: $block-width + 2 * $padding-width + 2 * $border-width;
+$break-sm: $break-xs + $block-width;
+$break-md: $break-sm + $block-width;
+$break-lg: $break-md + $block-width;
+$break-xl: $break-lg + $block-width;
+
+section {
+  /* border: $border-width solid black; */
+  padding: $padding-width $padding-width;
+}
+
+img {
+  width: 80px;
+  height: 64px;
+}
+
+h1 {
+  font-size: 150%;
+}
+
+.jo-flx-row {
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.jo-flx-col {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.jo-det-hdr {
+  background-color: #eeeeee;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jo-det-bdy {
+  /* align-items: flex-start; */
+  justify-content: flex-start;
+}
+
+.jo-det-blk {
+  justify-content: flex-start;
+  width: 320px;
+}
+
+.jo-det-blk div {
+  width: 50%; /*calc(50% - 10px); */
+  padding: 10px 10px;
+}
+
+.jo-det-blk div i {
+  align-self: flex-end;
+  float: right;
+}
+
+jo-det-blk.jo-det-zip div {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.jo-det-zip .list-group {
+  width: 100%;
+}
+
+.jo-det-zip li:nth-of-type(2n) {
+  background-color: #eeeeee;
+}
+
+.jo-det-lbl {
+  font-weight: bold;
+}
+
+@media screen and (max-width: $break-xs - 1px) {
+  .jo-det-blk:nth-of-type(1n) {
+    background-color: inherit;
+  }
+
+  .jo-det-blk:nth-of-type(2n) {
+    background-color: lightgray;
+  }
+}
+
+@media screen and (min-width: $break-xs) {
+  .jo-det-blk:nth-of-type(1n) {
+    background-color: inherit;
+  }
+
+  .jo-det-blk:nth-of-type(2n) {
+    background-color: lightgray;
+  }
+}
+
+@media screen and (min-width: $break-sm) {
+  .jo-det-blk:nth-of-type(1n) {
+    background-color: inherit;
+  }
+
+  $dark: 2 3 6 7 10 11 14 15 18 19;
+  @each $i in $dark {
+    .jo-det-blk:nth-of-type(#{$i}) {
+      background-color: lightgray;
+    }
+  }
+}
+
+@media screen and (min-width: $break-md) {
+  .jo-det-blk:nth-of-type(1n) {
+    background-color: inherit;
+  }
+
+  .jo-det-blk:nth-of-type(2n) {
+    background-color: lightgray;
+  }
+}
+
+@media screen and (min-width: $break-lg) {
+  .jo-det-blk:nth-of-type(1n) {
+    background-color: inherit;
+  }
+
+  $dark: 2 4 5 7 10 12 13 15 18 20;
+  @each $i in $dark {
+    .jo-det-blk:nth-of-type(#{$i}) {
+      background-color: lightgray;
+    }
+  }
+}
+
+@media screen and (min-width: $break-xl) {
+  .jo-det-blk:nth-of-type(1n) {
+    background-color: inherit;
+  }
+
+  .jo-det-blk:nth-of-type(2n) {
+    background-color: lightgray;
+  }
+}
+
+
