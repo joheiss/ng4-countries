@@ -10,31 +10,31 @@
 {{ searchCriteria | json}}
 
 <div class="btn-group jo-flx-row" data-toggle="buttons">
-  <label class="btn btn-secondary" [class.active]="searchCriteria.africa"
+  <label class="btn btn-secondary" [class.active]="africa.value"
          (click)="onToggle(africa)">
     <input type="checkbox" [checked]="searchCriteria.africa" id="africa" #africa> Africa
   </label>
-  <label class="btn btn-secondary" [class.active]="searchCriteria.antarctica"
+  <label class="btn btn-secondary" [class.active]="antarctica.value"
          (click)="onToggle(antarctica)">
     <input type="checkbox" [checked]="searchCriteria.antarctica" id="antarctica" #antarctica> Antarctica
   </label>
-  <label class="btn btn-secondary" [class.active]="searchCriteria.asia"
+  <label class="btn btn-secondary" [class.active]="asia.value"
          (click)="onToggle(asia)">
     <input type="checkbox" [checked]="searchCriteria.asia" id="asia" #asia> Asia
   </label>
-  <label class="btn btn-secondary" [class.active]="searchCriteria.australia"
+  <label class="btn btn-secondary" [class.active]="australia.value"
          (click)="onToggle(australia)">
     <input type="checkbox" [checked]="searchCriteria.australia" id="australia" #australia> Australia
   </label>
-  <label class="btn btn-secondary" [class.active]="searchCriteria.america"
+  <label class="btn btn-secondary" [class.active]="america.value"
          (click)="onToggle(america)">
     <input type="checkbox" [checked]="searchCriteria.america" id="america" #america> America
   </label>
-  <label class="btn btn-secondary" [class.active]="searchCriteria.europe"
+  <label class="btn btn-secondary" [class.active]="europe.value"
          (click)="onToggle(europe)">
     <input type="checkbox" [checked]="searchCriteria.europe" id="europe" #europe> Europe
   </label>
-  <label class="btn btn-secondary" [class.active]="searchCriteria.none"
+  <label class="btn btn-secondary" [class.active]="none.value"
          (click)="onToggle(none)">
     <input type="checkbox" [checked]="searchCriteria.none" id="none" #none> None
   </label>
