@@ -6,7 +6,11 @@ import {ReplaySubject} from 'rxjs/ReplaySubject';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/retry';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
 import {find, isEqual, cloneDeep} from 'lodash';
+import {COUNTRIES} from '../../data/countries-data';
 
 export const GOOGLE_API_KEY = 'AIzaSyDqlILRg6fQ6l5SVZevmstZxNZdpKVc4Xc';
 
@@ -144,11 +148,20 @@ export class CountriesService {
   private loadCountries(): Observable<Country[]> {
 
     return this.http.get('https://restcountries.eu/rest/v2/all')
+      .retry(3)
       .map(response => response.json())
       .map(response => response.map(item => {
         item.region = item.region || 'None';
         return item;
-      }));
+      }))
+      .catch(err => {
+        // take from local data store in case rest service is not available
+        return Observable.of(COUNTRIES)
+          .map(response => response.map(item => {
+            item.region = item.region || 'None';
+            return item;
+          }));
+      });
   }
 
   private loadCountry(code: string): Observable<Country> {
